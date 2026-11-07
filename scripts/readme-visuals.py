@@ -714,11 +714,13 @@ def architecture_scene(mobile=False):
 
 
 def social():
-    t = terminal([cap('hero')], fs=14, cursor=False)
+    c, out = cap('hero')
+    t = terminal([(c, out[:9])], fs=13, cursor=False)
     inner = (f'<div class="col" style="position:absolute;left:76px;top:0;bottom:0;width:560px;justify-content:center">{brand(30)}'
              '<h1 style="margin-top:34px;font-size:66px;line-height:1.02">Every AI chat<br>you’ve had,<br><span class="grad">one search away.</span></h1>'
              '<p class="lede" style="margin-top:26px;font-size:26px;text-wrap:initial">claude.ai · Claude Code · ChatGPT<br><b>One local SQLite archive.</b></p></div>'
-             f'<div style="position:absolute;left:676px;top:118px;width:900px">{t}</div>')
+             '<style>.sx .ln{white-space:pre;overflow:hidden;text-overflow:ellipsis}</style>'
+             f'<div class="sx" style="position:absolute;right:64px;top:0;bottom:0;width:560px;display:flex;align-items:center"><div style="width:100%">{t}</div></div>')
     return f'<div class="card square" style="width:1280px;height:640px;--gx:80%;--gy:-30%;--gw:1100px;--gh:760px">{inner}</div>'
 
 
