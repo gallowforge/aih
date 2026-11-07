@@ -15,3 +15,6 @@ aih.config.json
 __pycache__/
 *.pyc
 .venv/
+
+# README image sources, kept only with readme-visuals.py --keep-html
+docs/readme/.html/

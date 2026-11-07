@@ -1,0 +1,15 @@
+head -n 14 "$(aih show 990035b6)"
+---
+title: "Add full-text search to the notes CLI"
+source: "claude-code-laptop"
+id: "laptop:990035b6-e81b-5336-b94c-cf65ddd9d93a"
+created: "2026-02-11T19:04:15.775Z"
+updated: "2026-02-11T19:07:40.360Z"
+model: "claude-opus-4-1"
+messages: 8
+branches: 0
+project_dir: "-home-alex-src-notes"
+cwd: "/home/alex/src/notes"
+machine: "laptop"
+---
+

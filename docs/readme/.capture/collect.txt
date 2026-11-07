@@ -1,0 +1,12 @@
+aih collect
+10 changed, 0 removed, 0 unchanged sources
+  chatgpt-alex: 5
+  claude-code-desktop: 3
+  claude-code-laptop: 2
+  claude-code-server: 3
+  claude-web: 4
+claude-code desktop: pulled from desktop-lan
+claude-code laptop: pulled from laptop
+claude-code server: pulled from local
+inbox: chatgpt-export.zip → ChatGPT account "alex"
+inbox: conversations-1.zip → claude.ai export 2026-11-08-0120

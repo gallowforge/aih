@@ -1,0 +1,2 @@
+aih show 990035b6
+/home/alex/aih/chats/claude-code-laptop/2026/2026-02-11 Add full-text search to the notes CLI [990035b6].md

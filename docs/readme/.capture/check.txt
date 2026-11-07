@@ -1,0 +1,9 @@
+aih check
+Safe-to-delete check (newest export vs what the archive holds):
+
+  chatgpt-alex: export has 5 chats, archive has 5; newest export is 0 days old
+      files: 0 referenced, 0 without the original file
+      SAFE: every chat in the export is in the archive
+  claude-web: export has 4 chats, archive has 4; newest export is 0 days old
+      files: 0 referenced, 0 without the original file
+      SAFE: every chat in the export is in the archive

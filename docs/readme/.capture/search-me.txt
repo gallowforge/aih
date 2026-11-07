@@ -1,0 +1,10 @@
+aih search healthcheck --me -n 3
+[36m2025-11-14[0m chatgpt-alex · [1mDocker healthcheck: curl or wget?[0m [user/text]
+   Alpine-based image, no curl. What's the smallest [1;33mhealthcheck[0m for a web app on port 8000?
+   [2mchats/chatgpt-alex/2025/2025-11-14 Docker healthcheck curl or wget [590919f7].md[0m
+[36m2026-02-03[0m claude-code-server · [1mHealthcheck for the app container[0m [user/text]
+   Now give the app container a [1;33mhealthcheck[0m too. It serves /healthz on port 8000, and the image has…
+   [2mchats/claude-code-server/2026/2026-02-02 Healthcheck for the app container [5562fa10].md[0m
+[36m2026-02-02[0m claude-code-server · [1mAdd a Postgres healthcheck to the compose stack[0m [user/text]
+   Add a [1;33mhealthcheck[0m to Postgres in the compose stack so the app only starts once the database is…
+   [2mchats/claude-code-server/2026/2026-02-02 Add a Postgres healthcheck to the compose stack [17a85024].md[0m

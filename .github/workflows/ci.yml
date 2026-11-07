@@ -16,3 +16,20 @@ jobs:
         run: git ls-files -z '*.py' | xargs -0 -r python -m py_compile
       - name: Check shell scripts
         run: git ls-files -z '*.sh' | xargs -0 -r -n1 bash -n
+
+  smoke:
+    # Builds a synthetic archive (three machines, a claude.ai and a ChatGPT export) and checks
+    # collect, the import rules, search, show and check end to end.
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Make sure rsync is there
+        run: command -v rsync || (sudo apt-get update && sudo apt-get install -y rsync)
+      - name: End-to-end smoke test
+        run: bash scripts/smoke-test.sh

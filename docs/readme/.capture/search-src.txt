@@ -1,0 +1,4 @@
+aih search lifetime --source chatgpt -n 1
+[36m2025-10-21[0m chatgpt-alex · [1mRust lifetime elision rules[0m [user/text]
+   Explain Rust's [1;33mlifetime[0m elision rules with one example each.
+   [2mchats/chatgpt-alex/2025/2025-10-21 Rust lifetime elision rules [16fde92f].md[0m

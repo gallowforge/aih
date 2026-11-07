@@ -1,0 +1,8 @@
+aih stats
+chatgpt-alex           chats=5     messages=13     with-branches=1    2025-10-21 → 2026-01-27
+claude-code-desktop    chats=3     messages=15     with-branches=0    2025-12-15 → 2026-01-09
+claude-code-laptop     chats=2     messages=16     with-branches=0    2026-02-11 → 2026-03-05
+claude-code-server     chats=3     messages=22     with-branches=0    2026-02-02 → 2026-03-12
+claude-web             chats=4     messages=14     with-branches=1    2025-11-02 → 2026-02-21
+claude-code-desktop    files=1 saved=1
+flags: {'archived': 1, 'subagent': 1, 'tool_errors': 2}

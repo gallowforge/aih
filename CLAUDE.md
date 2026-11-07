@@ -18,7 +18,7 @@ The history spans years. It holds outdated, expired and wrong information, and t
 
 ## How to use it
 
-- Search: `./aih search "words"`. Filters: `--me` (only the owner's words), `--claude` (only answers), `--talk` (no tool output or thinking), `--source claude-web|claude-code-<machine>|chatgpt-<account>`, `--since YYYY-MM-DD`, `--newest`, `-n 50`. `--raw` passes FTS5 syntax through, for example `'"dolby" NEAR/5 "atmos"'` or `remux*`.
+- Search: `./aih search "words"`. Filters: `--me` (only the owner's words), `--claude` (only answers), `--talk` (no tool output or thinking), `--source claude-web|claude-code-<machine>|chatgpt-<account>`, `--since YYYY-MM-DD`, `--newest`, `-n 50`. `--raw` passes FTS5 syntax through, for example `'NEAR(caddy certificate, 8)'`, `'tokeni*'` or `'docker NOT compose'`.
 - Read: `chats/<source>/<year>/<date> <title> [id].md`. `INDEX.md` lists every chat.
 - SQL: `archive.db`, tables `conversations`, `messages`, `parts`, `files` and the FTS5 index `parts_fts`.
 - Update: `./aih collect` pulls new sessions, imports the inbox and rebuilds what changed. `./aih build --full` rebuilds from scratch.

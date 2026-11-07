@@ -1,0 +1,10 @@
+aih search "fts5 tokenizer" --talk -n 3
+[36m2025-10-30[0m chatgpt-alex · [1mAccent-insensitive search in SQLite[0m [assistant/text]
+   The simplest way is an [1;33mFTS5[0m table whose [1;33mtokenizer[0m removes diacritics:  ```sql CREATE VIRTUAL TABLE docs USING [1;33mfts5[0m…
+   [2mchats/chatgpt-alex/2025/2025-10-30 Accent-insensitive search in SQLite [fa8d008d].md[0m
+[36m2026-01-18[0m claude-web · [1mFinding José when searching for jose[0m [user/text]
+   …Which [1;33mFTS5[0m [1;33mtokenizer[0m should I use?
+   [2mchats/claude-web/2026/2026-01-18 Finding José when searching for jose [2577d174].md[0m
+[36m2026-02-11[0m claude-code-laptop · [1mAdd full-text search to the notes CLI[0m [assistant/text]
+   …An [1;33mFTS5[0m index over `notes(title, body)` with the `unicode61 remove_diacritics 2` [1;33mtokenizer[0m, so accents fold. 2…
+   [2mchats/claude-code-laptop/2026/2026-02-11 Add full-text search to the notes CLI [990035b6].md[0m

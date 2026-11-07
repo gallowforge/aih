@@ -1,0 +1,7 @@
+aih search --raw 'NEAR(accent* fold*, 4)' --claude -n 2
+[36m2026-01-18[0m claude-web · [1mFinding José when searching for jose[0m [assistant/text]
+   …[1;33mAccents[0m are [1;33mfolded[0m first, then each English word is reduced to its stem.
+   [2mchats/claude-web/2026/2026-01-18 Finding José when searching for jose [2577d174].md[0m
+[36m2026-02-11[0m claude-code-laptop · [1mAdd full-text search to the notes CLI[0m [assistant/text]
+   …An FTS5 index over `notes(title, body)` with the `unicode61 remove_diacritics 2` tokenizer, so [1;33maccents[0m [1;33mfold[0m. 2…
+   [2mchats/claude-code-laptop/2026/2026-02-11 Add full-text search to the notes CLI [990035b6].md[0m
