@@ -1,0 +1,18 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Compile every Python file
+        run: git ls-files -z '*.py' | xargs -0 -r python -m py_compile
+      - name: Check shell scripts
+        run: git ls-files -z '*.sh' | xargs -0 -r -n1 bash -n

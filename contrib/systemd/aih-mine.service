@@ -1,0 +1,7 @@
+[Unit]
+Description=aih: mine new messages into knowledge base notes
+
+[Service]
+Type=oneshot
+ExecStart=%h/aih/mine.py run
+TimeoutStartSec=6h

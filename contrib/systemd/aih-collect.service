@@ -1,0 +1,6 @@
+[Unit]
+Description=aih: collect AI conversations and update the archive
+
+[Service]
+Type=oneshot
+ExecStart=%h/aih/aih collect --quiet

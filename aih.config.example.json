@@ -1,0 +1,24 @@
+{
+  "user_name": "You",
+  "machines": {
+    "desktop": ["desktop-lan", "desktop"],
+    "laptop": ["laptop-lan", "laptop"],
+    "server": ["server"]
+  },
+  "hostnames": {
+    "my-desktop": "desktop",
+    "my-laptop": "laptop",
+    "homeserver": "server"
+  },
+  "hub": "server",
+  "inbox": "~/ai-inbox",
+  "mining": {
+    "kb_dir": "~/kb",
+    "profile_glob": "profile/[0-9][0-9]-*.md",
+    "inbox": "~/kb/inbox",
+    "claude": "claude",
+    "extract_model": "sonnet",
+    "verify_model": "opus",
+    "host": null
+  }
+}

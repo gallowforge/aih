@@ -1,0 +1,17 @@
+# Your data never goes in the repository.
+archive.db
+archive.db-*
+*.db
+chats/
+raw/
+sources/
+inbox/
+mining/
+INDEX.md
+collect.log
+*.log
+aih.config.json
+
+__pycache__/
+*.pyc
+.venv/
