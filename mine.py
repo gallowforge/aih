@@ -139,7 +139,7 @@ Rules:
 - People change their minds. Record each fact with ITS date; do not resolve conflicts here.
 - Speech-to-text slips are common ("cloud code" = Claude Code); write the real name.
 - SKIP entirely: passwords, keys, tokens, card/ID/phone numbers, exact addresses; and anything about another
-  person's legal status, court cases, disputes or other sensitive situations.
+  person's health, legal, financial or other sensitive situations.
 - One fact per item, short and specific, in English (the messages may be in any language).
 - section = the best-fitting profile section number: {section_list}
 
@@ -211,7 +211,7 @@ Your job, for this section only:
 2. CONFLICT: candidates that contradict the profile. The profile wins and is not changed. List them only if a
    reasonable person might want to double-check (e.g. the chat is newer than the profile's own date for it).
 3. Drop everything else silently: already known, outdated, trivial, one-off questions, guesses, other people's
-   private matters, anything about legal status, courts or disputes, secrets.
+   private matters, anything health, legal or financial, secrets.
 Be strict: a short list of facts that matter beats a long list. Keep each line short.
 
 Reply in this exact Markdown, nothing before or after:
