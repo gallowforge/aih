@@ -58,6 +58,8 @@ ok "--source keeps to one source" only "$(results "$(./aih search lifetime --sou
 ok "--raw takes FTS5 NEAR and prefix syntax" test "$(results "$(./aih search --raw 'NEAR(accent* fold*, 4)' --claude | plain)" | wc -l)" -eq 2
 ok "accents are folded (resume finds résumé)" has "$(./aih search resume --claude | plain)" "résumé"
 ok "system noise is kept out of results" test -z "$(./aih search ide_opened_file)"
+bad_raw() { ! ./aih search --raw 'NEAR/5 tls' >/dev/null 2>err.txt && grep -q "invalid FTS5 query" err.txt && ! grep -q Traceback err.txt; }
+ok "a malformed --raw query gets a friendly error" bad_raw
 
 echo "files"
 md=$(./aih show 990035b6)

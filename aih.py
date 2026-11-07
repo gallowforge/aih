@@ -894,7 +894,16 @@ def search(a):
     if a.since:
         sql.append('AND p.created >= ?'); args.append(a.since)
     sql.append('ORDER BY ' + ('p.created DESC' if a.newest else 'rank') + ' LIMIT ?'); args.append(a.n)
-    for src, title, created, role, kind, snip, path in db.execute(' '.join(sql), args):
+    try:
+        rows = db.execute(' '.join(sql), args).fetchall()
+    except sqlite3.OperationalError as e:
+        if not a.raw:
+            raise
+        sys.exit(f'aih: invalid FTS5 query {a.query!r}: {e}\n'
+                 '     examples: \'caddy AND tls\', \'NEAR(sqlite tokenizer, 5)\', \'docker*\', \'"exact phrase"\'')
+    if not rows:
+        print('no matches', file=sys.stderr)
+    for src, title, created, role, kind, snip, path in rows:
         print(f"\x1b[36m{(created or '')[:10]}\x1b[0m {src} · \x1b[1m{title or '(untitled)'}\x1b[0m [{role}/{kind}]")
         print('   ' + (snip or '').replace('\n', ' '))
         print(f'   \x1b[2m{path}\x1b[0m')
