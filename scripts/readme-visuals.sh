@@ -10,11 +10,13 @@
 #    every path in the images is exactly what aih printed. The real `aih collect`, `search`,
 #    `stats`, `show` and `check` run on it and their output is saved as-is, ANSI colours
 #    included. A second synthetic archive of 100,000 messages is built to time searches.
-# 2. Render (scripts/readme-visuals.py). The captures become HTML scenes, headless Chrome
-#    screenshots them, and ImageMagick converts them to WebP.
+# 2. Render (scripts/readme-visuals.py). The captures become card-catalogue scenes, written as
+#    HTML to docs/readme/src/ (styled by docs/readme/src/aih.css; the identity is described in
+#    docs/readme/IDENTITY.md). Headless Chrome screenshots them at 2x, and ImageMagick
+#    converts them to WebP.
 #
 # Needs: Linux with unprivileged user namespaces (unshare), python3, rsync,
-# google-chrome-stable and ImageMagick.
+# google-chrome-stable, ImageMagick, and network access for the Google Fonts.
 set -euo pipefail
 repo="$(cd "$(dirname "$0")/.." && pwd)"
 cache="$repo/docs/readme/.capture"

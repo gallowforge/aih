@@ -1,6 +1,6 @@
 <picture>
   <source media="(max-width: 700px)" srcset="docs/readme/hero-mobile.webp" />
-  <img src="docs/readme/hero.webp" width="100%" alt="aih: every AI chat you've had, one search away. A terminal runs aih search &quot;fts5 tokenizer&quot; and finds matches from ChatGPT, claude.ai and Claude Code on a laptop, with the matching words highlighted." />
+  <img src="docs/readme/hero.webp" width="100%" alt="aih: every AI chat you've had, catalogued. A card-catalogue drawer labelled fts5 tokenizer holds the real results of aih search &quot;fts5 tokenizer&quot;: the best match, from ChatGPT, is typed in full on the front card with the matching words in violet, and three more from claude.ai and Claude Code rise behind it. A violet stamp reads 3.2 ms, the median search over 100,000 messages." />
 </picture>
 
 <p align="center">
@@ -16,29 +16,29 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/gallowforge/aih/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/gallowforge/aih/ci.yml?branch=main&label=CI&labelColor=0f1217" /></a>
-  <img alt="Smoke test: 30 checks" src="https://img.shields.io/badge/smoke_test-30_checks-9b8cff?labelColor=0f1217" />
-  <img alt="Python 3.10+, standard library only" src="https://img.shields.io/badge/python-3.10%2B_%C2%B7_stdlib_only-9b8cff?labelColor=0f1217" />
-  <img alt="Your data stays local" src="https://img.shields.io/badge/data-stays_local-9b8cff?labelColor=0f1217" />
-  <img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-9aa1ad?labelColor=0f1217" />
+  <a href="https://github.com/gallowforge/aih/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/gallowforge/aih/ci.yml?branch=main&label=CI&labelColor=241D17" /></a>
+  <img alt="Smoke test: 31 checks" src="https://img.shields.io/badge/smoke_test-31_checks-5A3AA8?labelColor=241D17" />
+  <img alt="Python 3.10+, standard library only" src="https://img.shields.io/badge/python-3.10%2B_%C2%B7_stdlib_only-5A3AA8?labelColor=241D17" />
+  <img alt="Your data stays local" src="https://img.shields.io/badge/data-stays_local-5A3AA8?labelColor=241D17" />
+  <img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-9A8E7E?labelColor=241D17" />
 </p>
 
 <br />
 
-Your AI conversations hold months of decisions, fixes and half-finished ideas, and they are scattered. claude.ai and ChatGPT keep them on their own servers, one account at a time. Claude Code keeps them on each machine separately, and deletes transcripts older than 30 days by default.
+Your AI conversations hold months of decisions, fixes and half-finished ideas, and they are scattered across shelves you do not own. claude.ai and ChatGPT keep them on their own servers, one account at a time. Claude Code keeps them on each machine separately, and deletes transcripts older than 30 days by default.
 
-**aih copies every conversation into one SQLite database on your own disk, word for word, and finds anything in it in milliseconds.** It collects from all your machines every hour, keeps a readable Markdown copy of each chat, and never sends your data anywhere.
+**aih is the card catalogue: every conversation, word for word, in one SQLite database on your own disk, and anything in it found in milliseconds.** It collects from all your machines every hour, keeps a readable Markdown copy of each chat, and never sends your data anywhere. Nothing leaves the building.
 
 <picture>
   <source media="(max-width: 700px)" srcset="docs/readme/numbers-mobile.webp" />
-  <img src="docs/readme/numbers.webp" width="100%" alt="3 sources: claude.ai, Claude Code, ChatGPT. 3.2 ms median search over 100,000 messages. 3.9 s to rebuild all 100,000. A one-hour collection cycle on every machine. 0 cloud calls." />
+  <img src="docs/readme/numbers.webp" width="100%" alt="A card-catalogue cabinet with five drawers and one number on each label: 3 sources (claude.ai, Claude Code, ChatGPT), 3.2 ms median search over 100,000 messages, 3.9 s to rebuild all 100,000, a one-hour collection cycle on every machine, 0 cloud calls." />
 </picture>
 
 <br />
 
 ## Find it in milliseconds
 
-Type the words you remember. aih searches every chat from every source at once and shows where each match is, who said it, and the file to open.
+Type the words you remember. aih searches every chat from every source at once and hands you the cards: where each match is, who said it, and the file to open.
 
 - **Ranked and highlighted.** SQLite FTS5 ranks results with BM25. Each hit shows the date, the source, the chat title, who said it, the matching words in context, and the chat's Markdown file.
 - **Filter by who said it.** `--me` keeps only your own words, `--claude` only the answers, and `--talk` skips tool output and thinking. Narrow further with `--source`, `--since` and `--newest`.
@@ -47,10 +47,10 @@ Type the words you remember. aih searches every chat from every source at once a
 
 <picture>
   <source media="(max-width: 700px)" srcset="docs/readme/search-mobile.webp" />
-  <img src="docs/readme/search.webp" width="100%" alt="Three real searches: healthcheck with --me returns only the user's own messages; a raw NEAR query with prefixes returns two answers; lifetime with --source chatgpt returns one. Below, a panel lists every filter." />
+  <img src="docs/readme/search.webp" width="100%" alt="Three real searches, each a section of a drawer behind a guide card that names its filter: healthcheck with --me returns only the user's own messages; a raw NEAR query with --claude returns two answers; lifetime with --source chatgpt returns one. The best match of each stands up front. Below, a printed notice lists every filter." />
 </picture>
 
-## Every source in one shape
+## Every source, one catalogue
 
 - **Three sources, one model.** claude.ai official exports, Claude Code JSONL transcripts and ChatGPT exports (several accounts) all become the same conversation, message and part rows.
 - **Nothing is flattened.** Edited prompts and regenerated answers are kept as branches. Thinking, tool calls and tool output are kept. Original uploads are linked when you have them.
@@ -58,7 +58,7 @@ Type the words you remember. aih searches every chat from every source at once a
 
 <picture>
   <source media="(max-width: 700px)" srcset="docs/readme/stats-mobile.webp" />
-  <img src="docs/readme/stats.webp" width="100%" alt="aih stats lists five sources with their chats, messages, branches and date ranges. Below, the same numbers as a timeline: each source is a bar from its first chat to its last." />
+  <img src="docs/readme/stats.webp" width="100%" alt="aih stats written into an open circulation ledger: five sources with their chats, messages and branched chats, 17 chats and 80 messages in total, plus saved files and flags. The facing page draws each source as a bar from its first chat to its last." />
 </picture>
 
 ## Read any chat like a document
@@ -69,7 +69,7 @@ Type the words you remember. aih searches every chat from every source at once a
 
 <picture>
   <source media="(max-width: 700px)" srcset="docs/readme/markdown-mobile.webp" />
-  <img src="docs/readme/markdown.webp" width="100%" alt="A terminal lists the chats folder, runs aih show and prints the front matter of a chat file. Beside it, the same file rendered: properties, the title, the user's prompt, a folded Thinking block, the answer and folded tool calls." />
+  <img src="docs/readme/markdown.webp" width="100%" alt="A catalogue card typed with a chat's front matter and the path that aih show printed. Beside it, the same chat filed as a note in a drawer of folders, one per source from ls chats: the title, the user's prompt, a folded Thinking block, the answer and folded tool calls." />
 </picture>
 
 ## Every machine, collected every hour
@@ -81,10 +81,10 @@ Type the words you remember. aih searches every chat from every source at once a
 
 <picture>
   <source media="(max-width: 700px)" srcset="docs/readme/collect-mobile.webp" />
-  <img src="docs/readme/collect.webp" width="100%" alt="A diagram: the desktop is pulled over its LAN alias; the laptop's LAN alias does not answer, so it is pulled over its second alias; two website exports arrive through the inbox; the server hub writes archive.db and the chats folder. Below, the real output of aih collect, then aih build reporting 0 changed." />
+  <img src="docs/readme/collect.webp" width="100%" alt="The hourly collection round as a route map: the hub server reads its own transcripts, the desktop is pulled over desktop-lan, laptop-lan does not answer so the laptop is pulled over its second alias, and two website exports arrive through the inbox. Below, the real output of aih collect, aih build reporting 0 changed, and the hourly systemd timer." />
 </picture>
 
-## Delete online with confidence
+## Delete online with proof, not hope
 
 - **Proof before you delete.** `aih check` compares the newest export of each account with the archive. Only when every chat in the export is archived does it say SAFE.
 - **Fresh exports only.** An export older than two days covers nothing newer, so the check asks you to request a fresh one first.
@@ -92,14 +92,14 @@ Type the words you remember. aih searches every chat from every source at once a
 
 <picture>
   <source media="(max-width: 700px)" srcset="docs/readme/check-mobile.webp" />
-  <img src="docs/readme/check.webp" width="100%" alt="aih check reports that 5 of 5 ChatGPT chats and 4 of 4 claude.ai chats from the newest exports are in the archive: SAFE." />
+  <img src="docs/readme/check.webp" width="100%" alt="aih check typed on two library withdrawal slips, each stamped SAFE: 5 of 5 ChatGPT chats and 4 of 4 claude.ai chats from the newest exports are in the archive." />
 </picture>
 
 ## How it works
 
 <picture>
   <source media="(max-width: 700px)" srcset="docs/readme/architecture-mobile.webp" />
-  <img src="docs/readme/architecture.webp" width="100%" alt="The pipeline: claude.ai, Claude Code and ChatGPT feed aih collect, whose importers write chats/*.md and archive.db (SQLite with FTS5). aih search, stats, show, check, sqlite3 and agents read the archive. An optional nightly lane, mine.py, extracts facts with a fast model, verifies them with a second model and writes notes for review." />
+  <img src="docs/readme/architecture.webp" width="100%" alt="The architecture as a library floor plan: claude.ai, Claude Code and ChatGPT arrive at receiving; cataloguing runs aih collect every hour; the stacks hold archive.db (SQLite with FTS5) and the reading room holds chats/*.md; circulation serves aih search, stats, show, check, sqlite3 and agents. A dashed annex holds the optional nightly mine.py: a fast model extracts facts, a second model verifies them, and notes are written for review." />
 </picture>
 
 `aih.py` is one standard-library Python file, and `aih` is a symlink to it. Every source becomes the same three kinds of row: conversations, messages (a tree, so branches survive) and parts (text, thinking, tool calls, tool results, attachments). The parts feed an FTS5 index and the Markdown copies.
@@ -250,10 +250,10 @@ The `.gitignore` blocks the database, `chats/`, `sources/`, `raw/`, `inbox/`, `m
 
 | Check                            | What it covers                                                                                                                                                                                                                              |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| End-to-end smoke test, 30 checks | Builds the synthetic setup and runs the real `collect`, `build`, `search`, `stats`, `show` and `check`: alias fallback, inbox routing, incremental rebuilds, the hub rule, deleted chats, resumed sessions, branches, flags, every filter, FTS5 syntax, accent folding and the Markdown output. |
+| End-to-end smoke test, 31 checks | Builds the synthetic setup and runs the real `collect`, `build`, `search`, `stats`, `show` and `check`: alias fallback, inbox routing, incremental rebuilds, the hub rule, deleted chats, resumed sessions, branches, flags, every filter, FTS5 syntax, accent folding and the Markdown output. |
 | Python 3.10 and 3.13             | CI runs the smoke test on the oldest supported Python and a current one.                                                                                                                                                                   |
 | Syntax                           | Every Python file is compiled and every shell script parsed on each push.                                                                                                                                                                  |
-| Honest pictures                  | Every terminal in this README is real output from `scripts/readme-visuals.sh`, run on synthetic data in a private namespace.                                                                                                              |
+| Honest pictures                  | Every card, slip and ledger in this README carries real output from `scripts/readme-visuals.sh`, run on synthetic data in a private namespace.                                                                                            |
 
 ## FAQ
 
@@ -295,7 +295,7 @@ No. They are synthetic, generated by <code>scripts/demo-data.py</code> for a mad
 
 ## Contributing
 
-Issues and pull requests are welcome. Run `bash scripts/smoke-test.sh` before opening one; CI runs it on Python 3.10 and 3.13. If a change alters output shown here, regenerate the images with `scripts/readme-visuals.sh` (Linux with unprivileged user namespaces, Chrome and ImageMagick).
+Issues and pull requests are welcome. Run `bash scripts/smoke-test.sh` before opening one; CI runs it on Python 3.10 and 3.13. If a change alters output shown here, regenerate the images with `scripts/readme-visuals.sh` (Linux with unprivileged user namespaces, Chrome and ImageMagick). Their HTML sources land in `docs/readme/src/`, and `docs/readme/IDENTITY.md` describes the look.
 
 ## Licence
 
