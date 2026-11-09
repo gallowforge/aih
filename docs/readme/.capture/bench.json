@@ -24,9 +24,9 @@
     2388,
     1799
   ],
-  "query_ms_median": 3.21,
-  "cli_ms_median": 46.5,
-  "cli_ms_p90": 50.3,
-  "build_s": 3.9,
+  "query_ms_median": 3.23,
+  "cli_ms_median": 45.3,
+  "cli_ms_p90": 46.8,
+  "build_s": 3.8,
   "db_mb": 136.3
 }

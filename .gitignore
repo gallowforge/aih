@@ -16,3 +16,6 @@ __pycache__/
 *.pyc
 .venv/
 
+
+# README image build output (textures and frames)
+docs/readme/.build/

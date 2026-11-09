@@ -1,0 +1,16 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="tex.css"><body class="doc light" style="width:560px;--hi:#bcaaff;--hi-day:#5b3fc4;--ok:#c2b4ff">
+<div class="kick">chats/claude-code-laptop/2026</div>
+<div class="props" data-lift="key"><span class="k">source</span><span>claude-code-laptop</span><span class="k">created</span><span>2026-02-11T19:04:15.775Z</span><span class="k">model</span><span>claude-opus-4-1</span><span class="k">messages</span><span>8</span><span class="k">machine</span><span>laptop</span></div>
+<h1>Add full-text search to the notes CLI</h1>
+<h3>Alex <span>· 2026-02-11 19:04</span></h3>
+<p>Add a <code>notes search</code> command. Storage is already SQLite. Rank results by relevance, and searching &#x27;cafe&#x27; should also find &#x27;café&#x27;.</p>
+<h3>Assistant <span>· 2026-02-11 19:04</span></h3>
+<div class="fold">Thinking</div>
+<p>SQLite&#x27;s FTS5 does all of this with no new dependency:</p>
+<ol>
+<li>An FTS5 index over <code>notes(title, body)</code> with the <code>unicode61 remove_diacritics 2</code> tokenizer, so accents fold.</li>
+<li>Triggers keep the index in sync with the table.</li>
+<li><code>notes search</code> ranks with <code>bm25()</code> and prints a <code>snippet()</code> of each match.</li>
+</ol>
+<div class="fold">Tool: Write</div>
+</body>

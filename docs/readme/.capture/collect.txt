@@ -9,4 +9,4 @@ claude-code desktop: pulled from desktop-lan
 claude-code laptop: pulled from laptop
 claude-code server: pulled from local
 inbox: chatgpt-export.zip → ChatGPT account "alex"
-inbox: conversations-1.zip → claude.ai export 2026-11-08-0120
+inbox: conversations-1.zip → claude.ai export 2026-11-09-1838

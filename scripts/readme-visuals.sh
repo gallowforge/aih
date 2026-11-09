@@ -8,15 +8,17 @@
 #    "alex" on a hub called "server", plus a desktop and a laptop. It runs inside a private
 #    user, mount and hostname namespace, mounted at /home/alex on a machine named "server", so
 #    every path in the images is exactly what aih printed. The real `aih collect`, `search`,
-#    `stats`, `show` and `check` run on it and their output is saved as-is, ANSI colours
-#    included. A second synthetic archive of 100,000 messages is built to time searches.
-# 2. Render (scripts/readme-visuals.py). The captures become card-catalogue scenes, written as
-#    HTML to docs/readme/src/ (styled by docs/readme/src/aih.css; the identity is described in
-#    docs/readme/IDENTITY.md). Headless Chrome screenshots them at 2x, and ImageMagick
-#    converts them to WebP.
+#    `stats`, `show` and `check` run on it and their output is saved as-is in
+#    docs/readme/.capture/, ANSI colours included. A second synthetic archive of 100,000
+#    messages is built to time searches.
+# 2. Pages (scripts/readme-tex.py). The captures become terminal and document pages in
+#    docs/readme/src/tex/, word for word.
+# 3. Glass (docs/readme/src/glass/glass.cjs). The pages are screenshotted as textures and placed
+#    as frosted-glass windows by a small three.js compositor in headless Chromium, in a dark and
+#    a light version for desktop and phone, then written as WebP. See docs/readme/IDENTITY.md.
 #
-# Needs: Linux with unprivileged user namespaces (unshare), python3, rsync,
-# google-chrome-stable, ImageMagick, and network access for the Google Fonts.
+# Needs: Linux with unprivileged user namespaces (unshare), python3, rsync, node with
+# `playwright` and `three` (0.170) on NODE_PATH, ImageMagick, and network access for the fonts.
 set -euo pipefail
 repo="$(cd "$(dirname "$0")/.." && pwd)"
 cache="$repo/docs/readme/.capture"
@@ -31,4 +33,5 @@ if [ "${1:-}" != "--render" ]; then
   rm -rf "$cache" && mkdir -p "$cache" && cp "$work/out/"* "$cache/"
 fi
 
-python3 "$repo/scripts/readme-visuals.py" "$cache" "$repo/docs/readme"
+python3 "$repo/scripts/readme-tex.py" "$cache" "$repo/docs/readme/src/tex"
+node "$repo/docs/readme/src/glass/glass.cjs"
