@@ -134,7 +134,7 @@ how they want to be worked with, plans, purchases, health facts about themselves
 said they never want again, corrections they made.
 
 Rules:
-- Only what the words actually show. No guessing, no general knowledge, no homework or exam content, no facts
+- Only what the words actually show. No guessing, no general knowledge, no content of one-off tasks, no facts
   about the world. A question is not a fact about the person (unless it clearly reveals one, e.g. they own X).
 - People change their minds. Record each fact with ITS date; do not resolve conflicts here.
 - Speech-to-text slips are common ("cloud code" = Claude Code); write the real name.
