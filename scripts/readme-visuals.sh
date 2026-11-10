@@ -15,10 +15,13 @@
 #    docs/readme/src/tex/, word for word.
 # 3. Glass (docs/readme/src/glass/glass.cjs). The pages are screenshotted as textures and placed
 #    as frosted-glass windows by a small three.js compositor in headless Chromium, in a dark and
-#    a light version for desktop and phone, then written as WebP. See docs/readme/IDENTITY.md.
+#    a light version for desktop and phone, then written as WebP. The hero is a loop in which
+#    the search is typed and its output arrives; every other image is a still. See
+#    docs/readme/IDENTITY.md.
 #
 # Needs: Linux with unprivileged user namespaces (unshare), python3, rsync, node with
-# `playwright` and `three` (0.170) on NODE_PATH, ImageMagick, and network access for the fonts.
+# `playwright` and `three` (0.170) on NODE_PATH, ImageMagick, ffmpeg, and network access for the
+# fonts.
 set -euo pipefail
 repo="$(cd "$(dirname "$0")/.." && pwd)"
 cache="$repo/docs/readme/.capture"

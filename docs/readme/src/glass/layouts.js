@@ -1,6 +1,6 @@
 // aih in Glass: every composition of the README. The windows show real aih output (see
 // scripts/readme-tex.py); the accent light is violet, the colour aih's search hits take.
-import { lights, term, doc, lift, hero, heroPhone, panel, panelPhone, band, bandPhone, social } from './grammar.js';
+import { lights, term, doc, lift, replay, hero, heroPhone, panel, panelPhone, band, bandPhone, social } from './grammar.js';
 
 const A = { ray: '#b9b0ec', pool: '#5a43c8', deep: '#2c2560', lift: '#6a52d8', top: '#0b0b15', haze: '#1c1b30', fog: '#0c0c14',
   mote: '#e4dcff', day: '#f1f0f6', shade: '#ecebf3', dayFog: '#f1f0f6' };
@@ -10,6 +10,7 @@ export function build(M) {
   const F = M.facts;
   const HERO = {
     name: 'aih', h: 600, hp: 640,
+    replay: replay(M.search, { frames: 96 }),        // the loop: the search is typed and its matches arrive
     line: 'Every AI conversation, from every machine, searchable on your own disk.',
     linePhone: 'Every AI conversation, from every machine,<br>searchable on your own disk.',
     win: (n, ph) => {
@@ -20,7 +21,7 @@ export function build(M) {
       return [
         term(M, 'stats', P.s, n, A, { ...far }),
         doc(M, 'chat', P.d, n, A, { ...far, breathe: [14, 0.7] }),
-        term(M, 'search', P.m, n, A, { breathe: [10, 0.4], bezel: 10, glow: 0.75 }),
+        term(M, 'search', P.m, n, A, { play: true, breathe: [10, 0.4], bezel: 10, glow: 0.75 }),
         lift(M, 2, 'search', 'key', n, A, { lift: ph ? 60 : 90, grow: ph ? 0.98 : 1.0, breathe: [12, 0.85] }),
       ];
     },
