@@ -50,7 +50,7 @@ cd /tmp/aih-demo/aih && ./aih search "fts5 tokenizer"
 | Index | An FTS5 external-content table over part text and chat title, tokenizer `unicode61 remove_diacritics 2`, so `jose` finds José. `system` parts are stored but never indexed. |
 | Ranking | FTS5 `rank` (BM25), with snippets of up to 18 tokens and the matches highlighted. |
 | Queries | Each word is quoted and the words are ANDed, so punctuation is safe. `--raw` passes FTS5 syntax through: `NEAR`, `OR`, `NOT`, prefixes. |
-| Speed | 3.2 ms median query and 45 ms for the whole `aih search` command, over 100,000 synthetic messages on a desktop CPU. A full rebuild of all of them takes 3.8 s. |
+| Speed | 3.2 ms median query and 45 ms for the whole `aih search` command, over 100,000 synthetic messages on a desktop CPU. A full rebuild of all of them takes 3.8 s with the archive in RAM, and several times that on an encrypted disk. |
 | Incremental builds | Every source file is fingerprinted by size and modification time. Changed units are dropped and re-imported; Markdown is rewritten only when it changed. |
 | Other machines | `rsync -a` over `ssh -o BatchMode=yes`, `*.jsonl` only, never `--delete`. Host aliases are tried in order until one answers. |
 | Resumed sessions | An `owners` table maps each message to the first session that had it, so a resumed Claude Code session stores each message once. |
